@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1></h1>
+    <table border="1px solid black">
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+        </tr>
+       <tr th:each="customer: ${lisCustomer}">
+            <td th:text="${customer.firstName}"></td>
+            <td th:text="${customer.lastName}"></td>
+       </tr>
+    </table>
+</body>
+</html>

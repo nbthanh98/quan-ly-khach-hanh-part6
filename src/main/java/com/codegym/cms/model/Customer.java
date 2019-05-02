@@ -13,10 +13,23 @@ public class Customer {
 
     public Customer(){};
 
-    public Customer(Long id, String firstName, String lastName) {
+    public Customer(Long id, String firstName, String lastName, Province province) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.province = province;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "Province_id")
+    private Province province;
+
+    public Province getProvince() {
+        return province;
+    }
+
+    public void setProvince(Province province) {
+        this.province = province;
     }
 
     public Long getId() {
